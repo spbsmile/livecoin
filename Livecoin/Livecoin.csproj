@@ -1,6 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.0-alpha01</Version>
+    <Description>Client for Livecoin bitcoin exchange API.</Description>
+    <Authors>spbsmile</Authors>
+    <PackageId>LivecoinNet</PackageId>
+    <PackageProjectUrl>https://github.com/spbsmile/livecoin</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/spbsmile/livecoin</RepositoryUrl>
+    <PackageTags>livecoin</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />

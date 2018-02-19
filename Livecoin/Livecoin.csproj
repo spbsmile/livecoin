@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0-alpha01</Version>
+    <Version>1.0.0-alpha02</Version>
     <Description>Client for Livecoin bitcoin exchange API.</Description>
-    <Authors>spbsmile</Authors>
+    <Authors>Makar Zabiyakin</Authors>
     <PackageId>LivecoinNet</PackageId>
     <PackageProjectUrl>https://github.com/spbsmile/livecoin</PackageProjectUrl>
     <RepositoryUrl>https://github.com/spbsmile/livecoin</RepositoryUrl>

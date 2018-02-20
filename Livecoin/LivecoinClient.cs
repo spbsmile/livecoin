@@ -33,7 +33,7 @@ namespace Livecoin
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
         }
         
-        private async Task<ExchangeResponse<T>> QueryPublicGet<T>(string requestUrl,
+        private async Task<LivecoinResponse<T>> QueryPublicGet<T>(string requestUrl,
             Dictionary<string, string> args = null)
         {
             if (requestUrl == null) throw new ArgumentNullException(nameof(requestUrl));
@@ -46,7 +46,7 @@ namespace Livecoin
             return await GetAsync<T>($"{BaseAddress}{requestUrl}?{urlEncodedArgs}");
         }
 
-        private async Task<ExchangeResponse<T>> QueryPrivateGet<T>(string requestUrl,
+        private async Task<LivecoinResponse<T>> QueryPrivateGet<T>(string requestUrl,
             Dictionary<string, string> args = null)
         {
             if (requestUrl == null) throw new ArgumentNullException(nameof(requestUrl));
@@ -65,7 +65,7 @@ namespace Livecoin
             return await GetAsync<T>($"{BaseAddress}{requestUrl}?{urlEncodedArgs}");
         }
 
-        private async Task<ExchangeResponse<T>> QueryPrivatePost<T>(string requestUrl,
+        private async Task<LivecoinResponse<T>> QueryPrivatePost<T>(string requestUrl,
             Dictionary<string, string> args = null)
         {
             if (requestUrl == null) throw new ArgumentNullException(nameof(requestUrl));

@@ -6,7 +6,7 @@ namespace Livecoin
     /// Response from Exchange API.
     /// </summary>
     /// <typeparam name="T">Type of result.</typeparam>
-    public class ExchangeResponse<T>
+    public class LivecoinResponse<T>
     {
         /// <summary>
         /// Gets or sets errors of a request.

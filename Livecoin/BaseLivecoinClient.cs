@@ -38,17 +38,17 @@ namespace Livecoin
         /// </summary>
         protected Uri BaseAddress => GetStaticHttpClient.BaseAddress;
 
-        protected async Task<ExchangeResponse<TOut>> GetAsync<TOut>(string requestUri) =>
+        protected async Task<LivecoinResponse<TOut>> GetAsync<TOut>(string requestUri) =>
             await Http<object, TOut>(hc => hc.GetAsync(requestUri));
 
-        protected async Task<ExchangeResponse<TOut>> PostAsync<TOut>(string requestUri, HttpContent content) =>
+        protected async Task<LivecoinResponse<TOut>> PostAsync<TOut>(string requestUri, HttpContent content) =>
             await Http<object, TOut>(hc => hc.PostAsync(requestUri, content));
 
-        private async Task<ExchangeResponse<TOut>> Http<TIn, TOut>(Func<HttpClient, Task<HttpResponseMessage>> func)
+        private async Task<LivecoinResponse<TOut>> Http<TIn, TOut>(Func<HttpClient, Task<HttpResponseMessage>> func)
         {
             using (var response = await func(GetStaticHttpClient))
             {
-                if (response == null) return default(ExchangeResponse<TOut>);
+                if (response == null) return default(LivecoinResponse<TOut>);
                 var content = await response.Content.ReadAsStringAsync();
                 if (!response.IsSuccessStatusCode)
                 {
@@ -56,7 +56,7 @@ namespace Livecoin
                 }
 
                 response.EnsureSuccessStatusCode();
-                return new ExchangeResponse<TOut>
+                return new LivecoinResponse<TOut>
                 {
                     Result = JsonConvert.DeserializeObject<TOut>(content, JsonSettings)
                 };

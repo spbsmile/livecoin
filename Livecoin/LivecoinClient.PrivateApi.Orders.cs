@@ -14,7 +14,7 @@ namespace Livecoin
         /// <param name="price"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>        
-        public async Task<ExchangeResponse<OrderResponse>> BuyLimit(string symbol, decimal price,
+        public async Task<LivecoinResponse<OrderResponse>> BuyLimit(string symbol, decimal price,
             decimal quantity)
         {
             return await QueryPrivatePost<OrderResponse>("exchange/buylimit",
@@ -33,7 +33,7 @@ namespace Livecoin
         /// <param name="price"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public async Task<ExchangeResponse<OrderResponse>> SellLimit(string symbol, decimal price, decimal quantity)
+        public async Task<LivecoinResponse<OrderResponse>> SellLimit(string symbol, decimal price, decimal quantity)
         {
             return await QueryPrivatePost<OrderResponse>("exchange/selllimit",
                 new Dictionary<string, string>
@@ -50,7 +50,7 @@ namespace Livecoin
         /// <param name="symbol"></param>
         /// <param name="quantity"> Количество</param>
         /// <returns></returns>        
-        public async Task<ExchangeResponse<OrderResponse>> BuyMarket(string symbol, decimal quantity)
+        public async Task<LivecoinResponse<OrderResponse>> BuyMarket(string symbol, decimal quantity)
         {
             return await QueryPrivatePost<OrderResponse>("exchange/buymarket",
                 new Dictionary<string, string>
@@ -66,7 +66,7 @@ namespace Livecoin
         /// <param name="symbol"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>        
-        public async Task<ExchangeResponse<OrderResponse>> SellMarket(string symbol, decimal quantity)
+        public async Task<LivecoinResponse<OrderResponse>> SellMarket(string symbol, decimal quantity)
         {
             return await QueryPrivatePost<OrderResponse>("exchange/sellmarket",
                 new Dictionary<string, string>
@@ -82,7 +82,7 @@ namespace Livecoin
         /// <param name="symbol"></param>
         /// <param name="orderID"></param>
         /// <returns></returns>        
-        public async Task<ExchangeResponse<CancelLimit>> CancelLimit(string symbol, long orderID)
+        public async Task<LivecoinResponse<CancelLimit>> CancelLimit(string symbol, long orderID)
         {
             return await QueryPrivatePost<CancelLimit>("exchange/cancellimit",
                 new Dictionary<string, string>

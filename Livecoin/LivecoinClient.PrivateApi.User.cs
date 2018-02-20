@@ -11,7 +11,7 @@ namespace Livecoin
         /// </summary>
         /// <param name="currency"></param>
         /// <returns></returns>
-        public async Task<ExchangeResponse<Balance>> GetBalance(string currency)
+        public async Task<LivecoinResponse<Balance>> GetBalance(string currency)
         {
             return await QueryPrivateGet<Balance>("payment/balance", new Dictionary<string, string>
             {
@@ -26,7 +26,7 @@ namespace Livecoin
         /// </summary>
         /// <param name="currencies"></param>
         /// <returns></returns>
-        public async Task<ExchangeResponse<List<Balance>>> GetBalances(string currencies = null)
+        public async Task<LivecoinResponse<List<Balance>>> GetBalances(string currencies = null)
         {
             return await QueryPrivateGet<List<Balance>>("payment/balances", new Dictionary<string, string>
             {
@@ -45,7 +45,7 @@ namespace Livecoin
         /// <param name="limit"></param>
         /// <param name="offset"></param>
         /// <returns></returns>
-        public async Task<ExchangeResponse<List<Trade>>> GetTrades(string currencyPair = null, string orderDesc = null,
+        public async Task<LivecoinResponse<List<Trade>>> GetTrades(string currencyPair = null, string orderDesc = null,
             int? limit = null,
             int? offset = null)
         {
@@ -70,7 +70,7 @@ namespace Livecoin
         /// <param name="startRow"> Порядковый номер первой записи</param>
         /// <param name="endRow"> Порядковый номер последней записи</param>
         /// <returns></returns>
-        public async Task<ExchangeResponse<ClientOrders>> GetClientOrders(string currencyPair = null,
+        public async Task<LivecoinResponse<ClientOrders>> GetClientOrders(string currencyPair = null,
             string openClosed = null, string issuedFrom = null, string issuedTo = null,
             string startRow = null, string endRow = null)
         {
@@ -90,7 +90,7 @@ namespace Livecoin
         /// </summary>
         /// <param name="orderId"></param>
         /// <returns></returns>
-        public async Task<ExchangeResponse<Order>> GetOrderInfo(string orderId)
+        public async Task<LivecoinResponse<Order>> GetOrderInfo(string orderId)
         {
             return await QueryPrivateGet<Order>("exchange/order", new Dictionary<string, string>
             {
@@ -107,7 +107,7 @@ namespace Livecoin
         /// <param name="limit"></param>
         /// <param name="offset"></param>
         /// <returns></returns>        
-        public async Task<ExchangeResponse<HistoryTransaction>> GetHistoryTransactions(string start, string end,
+        public async Task<LivecoinResponse<HistoryTransaction>> GetHistoryTransactions(string start, string end,
             string types = null, int? limit = null, int? offset = null)
         {
             return await QueryPrivateGet<HistoryTransaction>("payment/history/transactions",
@@ -130,7 +130,7 @@ namespace Livecoin
         /// Возможные значения: BUY SELL DEPOSIT WITHDRAWAL
         /// Пример: BUY,SELL DEPOSIT DEPOSIT,WITHDRAWAL</param>
         /// <returns></returns>
-        public async Task<ExchangeResponse<int>> GetHistorySize(string start, string end, string types = null)
+        public async Task<LivecoinResponse<int>> GetHistorySize(string start, string end, string types = null)
         {
             return await QueryPrivateGet<int>("payment/history/size",
                 new Dictionary<string, string>

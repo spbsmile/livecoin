@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27406.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livecoin", "Livecoin\Livecoin.csproj", "{3CD90621-503A-459F-872B-F0E80A52ED6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Livecoin", "Livecoin\Livecoin.csproj", "{3CD90621-503A-459F-872B-F0E80A52ED6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livecoin.Tests", "Livecoin.Tests\Livecoin.Tests.csproj", "{42D17B16-21C3-4711-8EF4-C354DE6C6895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3CD90621-503A-459F-872B-F0E80A52ED6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD90621-503A-459F-872B-F0E80A52ED6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD90621-503A-459F-872B-F0E80A52ED6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D17B16-21C3-4711-8EF4-C354DE6C6895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D17B16-21C3-4711-8EF4-C354DE6C6895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D17B16-21C3-4711-8EF4-C354DE6C6895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D17B16-21C3-4711-8EF4-C354DE6C6895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

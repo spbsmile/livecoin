@@ -1,6 +1,6 @@
-<h1 align="center">Livecoin</h1>
+<h1 align="left">Livecoin</h1>
 
-<h4 align="center">.NET client for <a href="https://www.livecoin.net/">Livecoin bitcoin exchange API</a></h4>
+<h4 align="left">.NET client for <a href="https://www.livecoin.net/">Livecoin bitcoin exchange API</a></h4>
 
 > ⚠ This is an alpha version, meaning the API has not been tested on any production application. 
 

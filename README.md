@@ -22,8 +22,8 @@ PM> Install-Package LivecoinNET
 - 🛂 Covered with tests
 - &nbsp;✋ Supports API rate limiter
 
-## Livecoin Sign-up
-Please use my Referral ID: **Livecoin-bTpf1vRP** when you [**Register**](https://livecoin.net/?from=Livecoin-bTpf1vRP) (*an account is not required to access the public market data*).
+### Livecoin Sign-up
+Please use my Referral ID: **Livecoin-bTpf1vRP** when you [**Register**](https://livecoin.net/?from=Livecoin-bTpf1vRP) .
 
 ## Donate
 

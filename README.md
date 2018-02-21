@@ -23,7 +23,7 @@ PM> Install-Package LivecoinNET
 - &nbsp;✋ Supports API rate limiter
 
 ## Livecoin Sign-up
-To use the private (*authenticated*) API methods you must have an account with Livecoin and create an API Key. Please use my Referral ID: **Livecoin-bTpf1vRP** when you [**Register**](https://livecoin.net/?from=Livecoin-bTpf1vRP) (*an account is not required to access the public market data*).
+Please use my Referral ID: **Livecoin-bTpf1vRP** when you [**Register**](https://livecoin.net/?from=Livecoin-bTpf1vRP) (*an account is not required to access the public market data*).
 
 ## Donate
 

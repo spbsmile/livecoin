@@ -9,7 +9,7 @@
 - &nbsp;✖ Cross-platform based on [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
 - 🔁 Asynchronous API using [async and await](https://docs.microsoft.com/en-us/dotnet/csharp/async)
 - 💪 Strongly typed models
-
+- 🛂 Covered with tests
 
 ## Installation
 Using [Nuget](https://www.nuget.org/packages/LivecoinNet) Package Manager:
@@ -18,8 +18,6 @@ PM> Install-Package LivecoinNET
 ```
 [![](https://img.shields.io/nuget/dt/LivecoinNet.svg)](https://www.nuget.org/packages/LivecoinNet)
 ## Roadmap
-
-- 🛂 Covered with tests
 - &nbsp;✋ Supports API rate limiter
 
 ## Livecoin Sign-up

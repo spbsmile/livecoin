@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -7,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace Livecoin
 {
-    public partial class LivecoinClient : BaseLivecoinClient 
+    public partial class LivecoinClient : BaseLivecoinClient, IDisposable
     {
         private static HttpClient _httpClient;
 
         protected override HttpClient GetStaticHttpClient => _httpClient;
+
+        private static readonly CultureInfo Culture = CultureInfo.InvariantCulture;
 
         public LivecoinClient(string privateKey, string publicKey)
         {
@@ -89,5 +92,10 @@ namespace Livecoin
             "&",
             args.Where(x => x.Value != null).Select(x => x.Key + "=" + x.Value)
         );
+
+        public void Dispose()
+        {
+            _httpClient.Dispose();
+        }
     }
 }

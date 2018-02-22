@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Globalization;
 using System.Threading.Tasks;
 using Livecoin.Models.Private;
 
@@ -21,8 +20,8 @@ namespace Livecoin
                 new Dictionary<string, string>
                 {
                     {"currencyPair", symbol},
-                    {"price", price.ToString(CultureInfo.InvariantCulture)},
-                    {"quantity", quantity.ToString(CultureInfo.InvariantCulture)}
+                    {"price", price.ToString(Culture)},
+                    {"quantity", quantity.ToString(Culture)}
                 });
         }        
 
@@ -39,8 +38,8 @@ namespace Livecoin
                 new Dictionary<string, string>
                 {
                     {"currencyPair", symbol},
-                    {"price", price.ToString(CultureInfo.InvariantCulture)},
-                    {"quantity", quantity.ToString(CultureInfo.InvariantCulture)}
+                    {"price", price.ToString(Culture)},
+                    {"quantity", quantity.ToString(Culture)}
                 });
         }
         
@@ -56,7 +55,7 @@ namespace Livecoin
                 new Dictionary<string, string>
                 {
                     {"currencyPair", symbol},                    
-                    {"quantity", quantity.ToString(CultureInfo.InvariantCulture)}
+                    {"quantity", quantity.ToString(Culture)}
                 });
         }
 
@@ -72,7 +71,7 @@ namespace Livecoin
                 new Dictionary<string, string>
                 {
                     {"currencyPair", symbol},                    
-                    {"quantity", quantity.ToString(CultureInfo.InvariantCulture)}
+                    {"quantity", quantity.ToString(Culture)}
                 });
         }
 
@@ -80,15 +79,15 @@ namespace Livecoin
         /// Отменить ордер (лимитный).
         /// </summary>
         /// <param name="symbol"></param>
-        /// <param name="orderID"></param>
+        /// <param name="orderId"></param>
         /// <returns></returns>        
-        public async Task<LivecoinResponse<CancelLimit>> CancelLimit(string symbol, long orderID)
+        public async Task<LivecoinResponse<CancelLimit>> CancelLimit(string symbol, long orderId)
         {
             return await QueryPrivatePost<CancelLimit>("exchange/cancellimit",
                 new Dictionary<string, string>
                 {
                     {"currencyPair", symbol},                    
-                    {"orderId", orderID.ToString()}
+                    {"orderId", orderId.ToString()}
                 });
         }
     }

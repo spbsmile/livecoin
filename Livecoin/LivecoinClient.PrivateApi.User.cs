@@ -53,8 +53,8 @@ namespace Livecoin
             {
                 {"currencyPair", currencyPair},
                 {"orderDesc", orderDesc},
-                {"limit", limit.ToString()},
-                {"offset", offset.ToString()}
+                {"limit", limit?.ToString(Culture)},
+                {"offset", offset?.ToString(Culture)}
             });
         }
 
@@ -116,8 +116,8 @@ namespace Livecoin
                     {"start", start},
                     {"end", end},
                     {"types", types},
-                    {"limit", limit.ToString()},
-                    {"offset", offset.ToString()}
+                    {"limit", limit?.ToString(Culture)},
+                    {"offset", offset?.ToString(Culture)}
                 });
         }
 

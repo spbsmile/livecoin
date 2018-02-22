@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0-alpha04</Version>
+    <Version>1.0.0-alpha05</Version>
     <Description>Client for Livecoin bitcoin exchange API.</Description>
     <Authors>Makar Zabiyakin</Authors>
     <PackageId>LivecoinNet</PackageId>
@@ -10,7 +10,7 @@
     <PackageTags>livecoin</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/spbsmile/livecoin/master/livecoin_logo.png</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/spbsmile/livecoin/master/LICENSE</PackageLicenseUrl>
-    <PackageReleaseNotes>breaking changes: rename: ExchangeResponse =&gt; LivecoinResponse</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />

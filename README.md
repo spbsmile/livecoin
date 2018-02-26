@@ -17,8 +17,6 @@ Using [Nuget](https://www.nuget.org/packages/LivecoinNet) Package Manager:
 PM> Install-Package LivecoinNET
 ```
 [![](https://img.shields.io/nuget/dt/LivecoinNet.svg)](https://www.nuget.org/packages/LivecoinNet)
-## Roadmap
-- &nbsp;✋ Supports API rate limiter
 
 ## Livecoin Sign-up
 Please use my Referral ID: **Livecoin-bTpf1vRP** when you [**Register**](https://livecoin.net/?from=Livecoin-bTpf1vRP)

@@ -10,9 +10,10 @@
     <PackageTags>livecoin</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/spbsmile/livecoin/master/livecoin_logo.png</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/spbsmile/livecoin/master/LICENSE</PackageLicenseUrl>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>
+    </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 </Project>

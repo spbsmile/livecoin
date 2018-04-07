@@ -7,9 +7,9 @@ namespace Livecoin.Tests
 {
     public class LivecoinFixture : IDisposable
     {
-        public const string ApiKey = "<INSERT_API_KEY>";
+        public const string ApiKey = "";
 
-        public const string PrivateKey = "<INSERT_PRIVATE_KEY>";
+        public const string PrivateKey = "";
 
         public LivecoinFixture()
         {

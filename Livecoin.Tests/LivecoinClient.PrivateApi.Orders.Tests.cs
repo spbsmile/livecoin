@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -8,13 +9,20 @@ namespace Livecoin.Tests
         [Fact]
         public async Task BuyLimit()
         {
-            var res = await _client.BuyLimit(
-                Symbol,
-                PriceForBuy,
-                Volume);
+            try
+            {
+                var res = await _client.BuyLimit(
+                    Symbol,
+                    PriceForBuy,
+                    Volume);
 
-            Assert.True(res.Result.Success);
-            AssertNotDefault(res.Result.OrderId);
+                Assert.True(res.Result.Success);
+                AssertNotDefault(res.Result.OrderId);
+            }
+            catch (Exception e)
+            {
+                Assert.True(false);
+            }
         }
 
         [Fact]

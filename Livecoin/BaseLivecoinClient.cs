@@ -52,7 +52,20 @@ namespace Livecoin
                 var content = await response.Content.ReadAsStringAsync();
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new LivecoinApiException("There was a problem with a response from Livecoin.");
+                    LivecoinMessageError messageError;
+                    try
+                    {
+                        messageError = JsonConvert.DeserializeObject<LivecoinMessageError>(content, JsonSettings);
+
+                    }
+                    catch (Exception e)
+                    {
+                        throw new LivecoinApiException($"There was a problem with a response from Livecoin. ");
+                    }
+
+                    throw new LivecoinApiException("There was a problem with a response from Livecoin. " +
+                                                   $"{Environment.NewLine} messageError: {messageError.ErrorMessage} " +
+                                                   $"{Environment.NewLine} errorCode: {messageError.ErrorCode}");
                 }
 
                 response.EnsureSuccessStatusCode();

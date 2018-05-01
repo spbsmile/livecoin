@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0-alpha06</Version>
+    <Version>1.0.0-alpha07</Version>
     <Description>Client for Livecoin bitcoin exchange API.</Description>
     <Authors>Makar Zabiyakin</Authors>
     <PackageId>LivecoinNet</PackageId>

@@ -81,5 +81,36 @@ namespace Livecoin.Tests
                 Assert.True(false);
             }
         }
+
+        [Fact]
+        public async Task GetCommission()
+        {
+            try
+            {
+                var res = await _client.GetCommission();
+                Assert.True(res.Result.Success);
+                AssertNotDefault(res.Result.Fee);
+            }
+            catch (Exception e)
+            {
+                Assert.True(false);
+            }
+        }
+
+        [Fact]
+        public async Task GetCommissionCommonInfo()
+        {
+            try
+            {
+                var res = await _client.GetCommissionCommonInfo();
+                Assert.True(res.Result.Success);
+                AssertNotDefault(res.Result.Commission);
+                AssertNotDefault(res.Result.Last30DaysAmountAsUsd);
+            }
+            catch (Exception e)
+            {
+                Assert.True(false);
+            }
+        }
     }
 }

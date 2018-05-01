@@ -7,9 +7,9 @@ namespace Livecoin.Tests
 {
     public class LivecoinFixture : IDisposable
     {
-        public const string ApiKey = "";
+        private const string ApiKey = "";
 
-        public const string PrivateKey = "";
+        private const string PrivateKey = "";
 
         public LivecoinFixture()
         {
@@ -29,10 +29,10 @@ namespace Livecoin.Tests
         private readonly LivecoinClient _client;
 
         //MinBtc
-        public const decimal Volume = 0.0001m;
-        public const decimal PriceForSell = 20000;
-        public const decimal PriceForBuy = 3000;
-        public const string Symbol = "BTC/USD";
+        private const decimal Volume = 0.0001m;
+        private const decimal PriceForSell = 20000;
+        private const decimal PriceForBuy = 3000;
+        private const string Symbol = "BTC/USD";
 
         public LivecoinClientTests(ITestOutputHelper output, LivecoinFixture fixture)
         {

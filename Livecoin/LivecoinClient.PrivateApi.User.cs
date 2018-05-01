@@ -7,7 +7,7 @@ namespace Livecoin
     public partial class LivecoinClient
     {
         /// <summary>
-        /// Возвращает доступный баланс для выбранной валюты
+        /// Returns available balance for selected currency
         /// </summary>
         /// <param name="currency"></param>
         /// <returns></returns>
@@ -20,9 +20,8 @@ namespace Livecoin
         }
 
         /// <summary>
-        /// Возвращает массив с балансами пользователя. 
-        /// Для каждой валюты существует 4 типа балансов: общий (total), доступные для торговли средства (available), средства в открытых ордерах 
-        /// (trade), доступный для вывода (available_withdrawal)
+        /// Returns an array of your balances. There are four types of balances for every currency: totaltotal, funds available for tradingavailable,
+        /// funds in open orders trade , funds available for withdrawalavailable_withdrawal
         /// </summary>
         /// <param name="currencies"></param>
         /// <returns></returns>
@@ -35,12 +34,11 @@ namespace Livecoin
         }
 
         /// <summary>
-        /// По конкретному клиенту получить информацию о его последних сделках, 
-        /// результат может быть ограничен, соответствующими параметрами.
+        /// Get information on your latest transactions. The return may be limited by the parameters below.
         /// </summary>
         /// <param name="currencyPair"></param>
         /// <param name="orderDesc">
-        /// Порядок сортировки. Если true, то новые ордера будут первыми, если false, то старые ордера Значение по умолчанию: "true"       
+        /// Sorting order. If true then new orders will be first, otherwise old orders will be first. Default value: "true"   
         /// </param>
         /// <param name="limit"></param>
         /// <param name="offset"></param>
@@ -59,16 +57,16 @@ namespace Livecoin
         }
 
         /// <summary>
-        /// По конкретному клиенту и по конкретной паре валют получить полную информацию о его ордерах, 
-        /// информация может быть ограничена либо только открытые либо только закрытые ордера.
+        /// Get a detailed review of your orders for requested currency pair.
+        /// You can optionally limit return of orders of a certain type (return only open or only closed orders) 
         /// </summary>
         /// <param name="currencyPair"></param>
-        /// <param name="openClosed"> 	Тип ордера (открытые, закрытые, все) Значение по умолчанию: ALL 
-        /// Возможные значения: ALL OPEN CLOSED EXPIRED CANCELLED NOT_CANCELLED PARTIALLY</param>
-        /// <param name="issuedFrom"> Начальная дата выборки </param>
-        /// <param name="issuedTo"> Конечная дата выборки </param>
-        /// <param name="startRow"> Порядковый номер первой записи</param>
-        /// <param name="endRow"> Порядковый номер последней записи</param>
+        /// <param name="openClosed"> 	Order type.
+        /// Possible values: ALL OPEN CLOSED EXPIRED CANCELLED NOT_CANCELLED PARTIALLY</param>
+        /// <param name="issuedFrom"> Start date </param>
+        /// <param name="issuedTo"> End date </param>
+        /// <param name="startRow"> Sequence number of the first record</param>
+        /// <param name="endRow"> Sequence number of the last record</param>
         /// <returns></returns>
         public async Task<LivecoinResponse<ClientOrders>> GetClientOrders(string currencyPair = null,
             string openClosed = null, string issuedFrom = null, string issuedTo = null,
@@ -86,7 +84,7 @@ namespace Livecoin
         }
 
         /// <summary>
-        /// Получить информацию об ордере по его ID
+        /// Get the order information by its ID.
         /// </summary>
         /// <param name="orderId"></param>
         /// <returns></returns>
@@ -99,7 +97,7 @@ namespace Livecoin
         }
 
         /// <summary>
-        /// Возвращает список транзакций пользователя
+        /// Returns a list of your transactions
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
@@ -122,13 +120,12 @@ namespace Livecoin
         }
 
         /// <summary>
-        /// Возвращает количество транзакций пользователя с заданными параметрами
+        /// Returns the number of transactions with pre-defined parameters
         /// </summary>
         /// <param name="start"></param>
         /// <param name="end"></param>
-        /// <param name="types"> Типы транзакций (через запятую)
-        /// Возможные значения: BUY SELL DEPOSIT WITHDRAWAL
-        /// Пример: BUY,SELL DEPOSIT DEPOSIT,WITHDRAWAL</param>
+        /// <param name="types"> Transaction types (comma- separated list)
+        /// Possible values: BUY SELL DEPOSIT WITHDRAWAL</param>
         /// <returns></returns>
         public async Task<LivecoinResponse<int>> GetHistorySize(string start, string end, string types = null)
         {
@@ -139,6 +136,26 @@ namespace Livecoin
                     {"end", end},
                     {"types", types}
                 });
+        }
+
+        /// <summary>
+        /// Returns actual trading fee for customer
+        /// </summary>
+        /// <returns></returns>
+        public async Task<LivecoinResponse<Commission>> GetCommission()
+        {
+            return await QueryPrivateGet<Commission>("exchange/commission",
+                new Dictionary<string, string>());
+        }
+
+        /// <summary>
+        /// Returns actual trading fee and volume for the last 30 days in USD
+        /// </summary>
+        /// <returns></returns>
+        public async Task<LivecoinResponse<CommissionCommonInfo>> GetCommissionCommonInfo()
+        {
+            return await QueryPrivateGet<CommissionCommonInfo>("exchange/commissionCommonInfo",
+                new Dictionary<string, string>());
         }
     }
 }

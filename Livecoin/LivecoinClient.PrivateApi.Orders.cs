@@ -7,7 +7,7 @@ namespace Livecoin
     public partial class LivecoinClient
     {
         /// <summary>
-        /// Открыть ордер (лимитный) на покупку, определенной валюты.
+        /// Open a buy order (limit) for particular currency pair.
         /// </summary>
         /// <param name="symbol"></param>
         /// <param name="price"></param>
@@ -23,10 +23,10 @@ namespace Livecoin
                     {"price", price.ToString(Culture)},
                     {"quantity", quantity.ToString(Culture)}
                 });
-        }        
+        }
 
         /// <summary>
-        /// Открыть ордер (лимитный) на продажу определенной валюты. Доп.параметры аналогично покупки.
+        /// Open a sell order (limit) for a specified currency pair.
         /// </summary>
         /// <param name="symbol"></param>
         /// <param name="price"></param>
@@ -42,9 +42,9 @@ namespace Livecoin
                     {"quantity", quantity.ToString(Culture)}
                 });
         }
-        
+
         /// <summary>
-        /// Открыть ордер(рыночный) на покупку определенной валюты на заданное количество.
+        /// Open a buy order (market) of specified amount for particular currency pair.
         /// </summary>
         /// <param name="symbol"></param>
         /// <param name="quantity"> Количество</param>
@@ -60,7 +60,7 @@ namespace Livecoin
         }
 
         /// <summary>
-        /// Открыть ордер(рыночный) на продажу определенной валюты на заданное количество.
+        /// Open a sell order (market) for specified amount of selected currency pair.
         /// </summary>
         /// <param name="symbol"></param>
         /// <param name="quantity"></param>
@@ -76,7 +76,7 @@ namespace Livecoin
         }
 
         /// <summary>
-        /// Отменить ордер (лимитный).
+        /// Cancel order
         /// </summary>
         /// <param name="symbol"></param>
         /// <param name="orderId"></param>

@@ -9,5 +9,9 @@ namespace Livecoin
 
         [JsonProperty("errorMessage")]
         public string ErrorMessage { get; set; }
+
+        [JsonProperty("exception")]
+        public string Exception { get; set; }
+        
     }
 }

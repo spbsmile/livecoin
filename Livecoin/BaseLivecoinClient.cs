@@ -56,7 +56,6 @@ namespace Livecoin
                     try
                     {
                         messageError = JsonConvert.DeserializeObject<LivecoinMessageError>(content, JsonSettings);
-
                     }
                     catch (Exception e)
                     {
@@ -69,10 +68,23 @@ namespace Livecoin
                 }
 
                 response.EnsureSuccessStatusCode();
-                return new LivecoinResponse<TOut>
+
+                try
                 {
-                    Result = JsonConvert.DeserializeObject<TOut>(content, JsonSettings)
-                };
+                    return new LivecoinResponse<TOut>
+                    {
+                        Result = JsonConvert.DeserializeObject<TOut>(content, JsonSettings)
+                    };
+                }
+                catch (Exception e)
+                {
+                    var messageError = JsonConvert.DeserializeObject<LivecoinMessageError>(content, JsonSettings);
+                    return new LivecoinResponse<TOut>
+                    {
+                        Result = default(TOut),
+                        Errors = messageError.Exception
+                    };
+                }
             }
         }
     }

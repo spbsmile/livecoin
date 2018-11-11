@@ -2,9 +2,6 @@
 
 <h4 align="left">.NET client for <a href="https://livecoin.net/?from=Livecoin-bTpf1vRP">Livecoin bitcoin exchange API</a></h4>
 
-> ⚠ This is an alpha version, meaning the API has not been tested on any production application. 
-
-
 ## Features
 - &nbsp;✖ Cross-platform based on [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
 - 🔁 Asynchronous API using [async and await](https://docs.microsoft.com/en-us/dotnet/csharp/async)
